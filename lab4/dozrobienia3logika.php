@@ -8,11 +8,11 @@
         $query = new MongoDB\Driver\Query(['Zespół' => $zespol]);
         $cursor = $connection->executeQuery('Test.Płyty', $query);
 
-        echo "Płyty zespołu " . $zespol . ":<br />";
+        echo "Płyty zespołu " . $zespol . ":<br /><br />";
         foreach ($cursor as $document) {
-            echo "Nazwa płyty: " . $document->{"Nazwa płyty"} . ", ";
-            echo "Gatunek: " . $document->{"Gatunek"} . ", ";
-            echo "Rok wydania: " . $document->{"Rok wydania"} . "<br />";
+            echo "Nazwa płyty: " . $document->{"Nazwa płyty"} . ", ". "<br />";
+            echo "Gatunek: " . $document->{"Gatunek"} . ", ". "<br />";
+            echo "Rok wydania: " . $document->{"Rok wydania"} . "<br /><br/>";
         }
     }
 
