@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Test przesyłania metodą POST</title>
+  </head>
+  <body>
+    <form>
+      <div>
+        <label>Login</label>
+        <input type="text" id="user" />
+      </div>
+      <div>
+        <label>Hasło</label>
+        <input type="password" id="pass" />
+      </div>
+      <button type="submit">Zaloguj</button>
+    </form>
+    <script>
+      document.querySelector("button").addEventListener("click", (e) => {
+        e.preventDefault();
+        const username = document.querySelector("#user").value;
+        const password = document.querySelector("#pass").value;
+        fetch("/", {
+          method: "POST",
+          headers: {
+            Authorization: "JednorazowyToken",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username,
+            password,
+          }),
+        })
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => console.log(data));
+      });
+    </script>
+  </body>
+</html>

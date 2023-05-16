@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Strona ukryta</title>
+  </head>
+  <body>
+    <h1>Witaj na stronie ukrytej!</h1>
+    <p>
+      To jest treść strony, do której dostęp ma tylko zalogowany użytkownik.
+    </p>
+    <button id="logoutButton">Wyloguj się</button>
+
+    <script>
+      document
+        .getElementById("logoutButton")
+        .addEventListener("click", function () {
+          // Wykonaj wylogowanie
+          fetch("/logout", {
+            method: "POST",
+          })
+            .then(function (response) {
+              // Przekieruj na stronę logowania po wylogowaniu
+              window.location.href = "/index.html";
+            })
+            .catch(function (error) {
+              console.log("Błąd podczas wylogowywania:", error);
+            });
+        });
+    </script>
+  </body>
+</html>

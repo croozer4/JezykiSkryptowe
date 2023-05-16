@@ -1,0 +1,4 @@
+Kolokwium grupa 1
+Konrad Kulesza 134296
+
+Do zaimportowania użyłem metody mongoDb Compass

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+
+        <form method="POST" action="zadanie3.php">
+            <!-- <label for="index">Index:</label>
+            <input type="text" id="index" name="index" required><br><br> -->
+    
+            <label for="zespol">Zespół:</label>
+            <input type="text" id="zespol" name="zespol" pattern="[A-Z][a-zA-Z]*" required><br><br>
+    
+            <label for="typ">Typ:</label>
+            <select id="typ" name="typ">
+                <option value="Vinyl">Vinyl</option>
+                <option value="CD">CD</option>
+                <option value="Kaseta">Kaseta</option>
+            </select><br><br>
+    
+            <label for="cena">Cena:</label>
+            <input type="number" id="cena" name="cena" step="0.01" min="0" required><br><br>
+    
+            <input type="submit" value="Dodaj dokument">
+        </form>
+
+    </body>
+</html>
